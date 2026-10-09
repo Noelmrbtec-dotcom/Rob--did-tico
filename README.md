@@ -89,7 +89,7 @@ Ideal para:
 
 - 🎓 **Aulas** de sistemas embarcados e tempo real
 - 🧪 **Laboratórios** de microcontroladores
-- 🏆 **Equipes de competição** que querem entender o que há por baixo do Arduino
+- 🏆 **Equipes de competição** que querem entender o que há por baixo 
 - 🤓 **Curiosos** que querem ver código "de verdade" com 68 bytes de RAM
 
 ---
