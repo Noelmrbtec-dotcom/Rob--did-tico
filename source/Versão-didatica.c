@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 //                        ROBÓTICA TRATOR — VERSÃO DIDÁTICA                  //
 //                                                                           //
-//  Autor original : Marcos Roberto Braga                                    //
+//  Autor: Marcos Roberto Braga                                    //
 //  Código original: 28/05/2012                                              //
 //  Ajustes finais : 22/06/2012                                              //
 //  Versão didática: comentada para fins pedagógicos                         //
