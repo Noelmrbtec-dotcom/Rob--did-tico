@@ -11,6 +11,8 @@
 //                                                                           //
 //  Hardware: PIC16F84 @ 4 MHz — 1 KB flash, 68 bytes RAM.                   //
 //  Técnica:  escalonamento cíclico (cyclic executive) + ISR de 1 ms.        //
+//  OBS: O robô tem dois modos de operação selecionados por um chave física  //
+//  no hardware (
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <16F84.h>
@@ -49,7 +51,7 @@
 //=============================================================================
 // [DIDÁTICO] POTÊNCIAS DOS MOTORES — valores de duty cycle.
 // O PWM tem período de 50 ms (20 Hz) e resolução de 1 ms.
-// Logo, duty máximo útil = 50. O autor usou 48 (margem de segurança).
+// Logo, duty máximo útil = 50. Inicializa em 48 (Velocidade quase máxima).
 // [EXERCÍCIO] Calcule a resolução do PWM em % (1/50 = 2% por passo).
 //=============================================================================
 #define max_pt_d 48
@@ -135,15 +137,13 @@ int16 ano     = 0;
 // [DIDÁTICO] BITS DE SEMÁFORO
 // 0 = tarefa liberada | 1 = tarefa bloqueada
 // Permite exclusão mútua simples sem mutex pesado.
-// [CUIDADO] Note que sema_task6 aponta para o bit 6 (não 5!).
-//           Provavelmente um bug sutil do autor original.
 //=============================================================================
 #bit sema_task1 = semaforo_task.0
 #bit sema_task2 = semaforo_task.1
 #bit sema_task3 = semaforo_task.2
 #bit sema_task4 = semaforo_task.3
 #bit sema_task5 = semaforo_task.4
-#bit sema_task6 = semaforo_task.6
+#bit sema_task6 = semaforo_task.5
 
 //=============================================================================
 // [DIDÁTICO] BITS DE FLAGS DO SISTEMA
@@ -213,7 +213,7 @@ void config_timer0(void)
 {
    tick = 6;
    timer_1s = 1000;
-   psa=0; ps0=1; ps1=0; ps2=0;   // [DIDÁTICO] Prescaler 1:4 no Timer0
+   psa=0; ps0=1; ps1=0; ps2=0;    // [DIDÁTICO] Prescaler 1:4 no Timer0
    t0cs=0;                        // [DIDÁTICO] Clock interno Fosc/4
    tmr0=tick;
    t0ie=1;                        // [DIDÁTICO] Habilita IRQ do Timer0
@@ -222,7 +222,8 @@ void config_timer0(void)
 
 //=============================================================================
 // [DIDÁTICO] PRESET INICIAL — estado seguro conhecido
-// Lê a chave liga/desliga e bloqueia tarefas conforme o estado.
+// Lê a chave liga/desliga e bloqueia tarefas conforme o estado.(Modo pré requisito 
+// ou combate.
 //=============================================================================
 void config_preset(void)
 {
@@ -403,9 +404,11 @@ void controle_direcao(void)
 
 //=============================================================================
 // [DIDÁTICO] TAREFA 5 — BLOQUEIO APÓS 20 SEGUNDOS
-// Regra da competição: robô deve parar sozinho após 20 s.
-// [CUIDADO] O while(1) é um "travamento controlado": não retorna nunca.
+// Regra da competição: robô deve parar sozinho após 20 s(2 metros percorridos
+// em linha reta)pré requisito.
+// [CUIDADO] O while(true) é um "travamento controlado": não retorna nunca.
 //           Em sistema embarcado, isso é aceitável APÓS cumprir a regra.
+// No caso o pré requisito não combate!
 //=============================================================================
 void bloqueia_motor(void)
 {
@@ -442,8 +445,6 @@ void tempo_de_pa(void)
 // Padrão "cyclic executive": cada tarefa tem período fixo e é executada
 // quando seu contador chega a zero. Nada de RTOS, nada de preempção.
 // [POR QUÊ] Determinismo total: sabe-se exatamente quando cada tarefa roda.
-//
-// Autor: Marcos Roberto Braga (2012)
 //=============================================================================
 void main(void)
 {
