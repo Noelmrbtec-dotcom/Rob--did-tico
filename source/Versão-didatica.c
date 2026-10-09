@@ -443,7 +443,7 @@ void tempo_de_pa(void)
 // quando seu contador chega a zero. Nada de RTOS, nada de preempção.
 // [POR QUÊ] Determinismo total: sabe-se exatamente quando cada tarefa roda.
 //
-// Autor original: Marcos Roberto Braga (2012)
+// Autor: Marcos Roberto Braga (2012)
 //=============================================================================
 void main(void)
 {
