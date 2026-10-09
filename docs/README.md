@@ -3,10 +3,6 @@
 
 Documentação técnica do projeto Robótica Trator 2012.
 
-## 📂 Conteúdo
-
-- **[`diagramas/`](diagramas/)** — diagramas de tempo (PNG)
-
 ## 📊 Diagramas
 
 | # | Diagrama | Descrição |
