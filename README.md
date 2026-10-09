@@ -6,8 +6,8 @@ de robótica em 2012, implementado sobre um **PIC16F84** (1 KB de flash,
 
 ## 📂 Conteúdo
 
-- **[`source/`](source/)** — código-fonte do robô (original e versão didática)
-- **[`docs/`](docs/)** — diagramas de tempo, documentação e PDF
+- **[`source/`](source/)** — código-fonte do robô (versão didática)
+- **[`docs/`](docs/)** — diagramas de tempo em png
 
 ## 👤 Autor
 
