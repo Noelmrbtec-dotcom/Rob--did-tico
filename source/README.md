@@ -5,7 +5,7 @@ Código-fonte do robô trator para **PIC16F84** (compilador CCS C).
 
 ## 📂 Arquivos
 
-- **[`versão-didática.c`](versão-didática.c)** — versão comentada para fins didáticos
+- **[`Versão-didatica.c`](Versão-didatica.c)** — versão comentada para fins didáticos
 - **[`Hardware_robo_trator.h`](Hardware_robo_trator.h)** — mapeamento de pinos e periféricos
 
 ## 🔧 Compilação
