@@ -410,7 +410,7 @@ void controle_direcao(void)
 void bloqueia_motor(void)
 {
    if (segundo == 20) {
-      while (1) {
+      while (true) {
          frente_d = 0;
          frente_e = 0;
       }
