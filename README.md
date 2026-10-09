@@ -16,12 +16,12 @@
 
 <p align="center">
   <b>📊 Métricas reais de compilação</b><br>
-  <code>ROM used:    498 words (49%)</code><br>
-  <code>Largest free fragment: 526</code><br>
-  <code>RAM used:    41 bytes (60%) at main() level</code><br>
-  <code>             42 bytes (62%) worst case</code><br>
-  <code>Stack used:  1 location (0 in main + 1 for interrupts)</code><br>
-  <code>Stack size:  8</code>
+  ROM used:    498 words (49%)<br>
+  Largest free fragment: 526<br>
+  RAM used:    41 bytes (60%) at main() level<br>
+              42 bytes (62%) worst case<br>
+  Stack used:  1 location (0 in main + 1 for interrupts)<br>
+  Stack size:  8
 </p>
 
 ---
