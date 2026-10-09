@@ -12,7 +12,11 @@
 //  Hardware: PIC16F84 @ 4 MHz — 1 KB flash, 68 bytes RAM.                   //
 //  Técnica:  escalonamento cíclico (cyclic executive) + ISR de 1 ms.        //
 //  OBS: O robô tem dois modos de operação selecionados por um chave física  //
-//  no hardware (
+//  no hardware ( RA0 compartilhada com led sinalizador de sistema ativo)    //
+//  Pré requisito: (Percorrer uma distância de 2 metros em 20s (Linha reta)  //
+//  e para.                                                                  //
+//  Combate : Aqui é o pega pra capar!!!!(Não pode sair da arena e destruir  //
+//  os adversarios.                                                          //
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <16F84.h>
