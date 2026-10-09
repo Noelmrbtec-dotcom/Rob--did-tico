@@ -15,4 +15,4 @@ Documentação técnica do projeto Robótica Trator 2012.
 | 02 | [Escalonamento ciclico.png](diagramas/02-escalonamento.png) | Escalonamento cíclico das tarefas |
 | 03 | [PWM por software](diagramas/03-pwm-software.png) | PWM gerado em software (20 Hz) |
 | 04 | [Dead-time](diagramas/04-dead-time.png) | Proteção de ponte H |
-| 05 | [Máquina de estados](diagramas/05-maquina-estados.png) | Controle de direção |
+| 05 | [Máquina de estado.png](diagramas/05-maquina-estados.png) | Controle de direção |
