@@ -12,6 +12,12 @@
 <p align="center">
   <b>Código-fonte e documentação de um robô trator que venceu uma competição de robótica em 2012.</b><br>
   Implementado sobre um <b>PIC16F84</b> — 1 KB de flash, 68 bytes de RAM, 4 MHz.
+  ROM used:   498 words (49%)
+                           Largest free fragment is 526
+               RAM used:   41 (60%) at main() level
+                           42 (62%) worst case
+               Stack used: 1 locations (0 in main + 1 for interrupts)
+               Stack size: 8
 </p>
 
 ---
